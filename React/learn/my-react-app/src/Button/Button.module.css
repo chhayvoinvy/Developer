@@ -1,0 +1,10 @@
+
+
+.button {
+    font-family: "Afacad Flux", sans-serif;
+    border: none;
+    font-size: 18px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: rgb(156, 194, 255);
+}

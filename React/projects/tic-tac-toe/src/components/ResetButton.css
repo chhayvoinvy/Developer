@@ -1,0 +1,11 @@
+.resetbutton {
+    background-color: blueviolet;
+    border: none;
+    padding: 10px 25px;
+    margin: 50px auto;
+    font-size: 1rem;
+    border-radius: 20px;
+    display: block;
+    color: white;
+    font-weight: 500;
+}

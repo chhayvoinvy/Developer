@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+:root {
+    --cardCorner: 25px;
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+}
+
+
+body {
+    background-image: url('bg-g.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.to-do-list-container {
+    width: 0%;
+    max-width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.431);
+    display: flex;
+    position: absolute;
+    top: 160px;
+    left: 350px;
+    transform: skew(45deg, 45deg) scale(0) translate(-225px, -280px);
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    color: #000000e6;
+    box-shadow: 5px 5px 15px #0000001c;
+    backdrop-filter: blur(5);
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(0.3, 0.3, 0.5, 1);
+    opacity: 0;
+}
+
+.to-do-list-container.open {
+    width: 100%;
+    max-width: 350px;
+    height: 450px;
+    top: 120px;
+    left: 300px;
+    opacity: 100;
+    transform: skew(0deg, 0deg) scale(1) translate(-180px, 125px);
+}
+
+.to-do-list-container .add-tasks {
+    padding-top: 25px;
+}
+
+.to-do-list-container input {
+    width: auto;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.to-do-list-container input:focus {
+    outline: 1px solid #5fffe7;
+}
+
+.to-do-list-container button.add-task {
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #9de3ffe6;
+}
+
+.to-do-list-container button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.to-do-list-container button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    margin-right: 5px;
+}
+
+.to-do-list-container ol {
+    padding: 10px;
+    margin-top: 25px;
+    overflow-y: scroll;
+}
+
+.to-do-list-container ol li {
+    display: flex; 
+    justify-content: end;
+    align-items: center;
+    font-weight:500;
+    animation: fade;
+    animation-duration: 0.5s;
+}
+
+.to-do-list-container ol li .action-buttons {
+    margin-left: 15px;
+    padding: 2px;
+}
+
+.todo-icon {
+    margin: 5rem;
+    text-align: center;
+}
+
+.todo-icon img {
+    transition: all 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.todo-icon img:hover {
+    transform: scale(1.1);
+}
+
+.todo-icon:hover::before {
+    content: "Todo";
+    position: absolute;
+    top: 35px;
+    text-align: center;
+    color: white;
+    width: 60px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: #00000045;
+    backdrop-filter: blur(5);
+    transition: all 0.5s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100;
+    }
+}
+

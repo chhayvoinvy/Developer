@@ -1,0 +1,122 @@
+body {
+    background: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.game-container {
+    width: 300px;
+    height: 500px;
+    border: 3px solid rgba(68, 68, 68, 0.492);
+    background: rgb(18, 18, 18);
+    overflow: hidden;
+    position: relative;
+}
+
+._ship, ._bullet,
+._booster_active, ._booster, ._blink,
+._obst_clown, ._obst_knife, ._obst_snake {
+    width: 20px;
+    filter: brightness(1.5);
+    height: auto;
+    position: absolute;
+}
+
+
+._ship {
+    bottom: 0;
+}
+
+._bullet {
+    width: 10px;
+    text-align: center;
+    padding: 0px 5px;
+    bottom: 50px;
+
+}
+
+._blink {
+    animation: Blinking infinite;
+    animation-duration: 1s ;
+
+    bottom: 150px;
+    left: 50px;
+}
+._booster {
+    animation: Boosting infinite;
+    animation-duration: 1s ;
+
+
+    bottom: 100px;
+    left: 50px;
+}
+
+._booster_active {
+    animation: PowerShip infinite;
+    animation-duration: 0.1s ;
+
+
+    bottom: 100px;
+}
+
+._obst_snake {
+    bottom: 290px;
+}
+._obst_knife {
+    bottom: 250px;
+}
+._obst_clown {
+    bottom: 170px;
+}
+
+/* Temp */
+
+@keyframes Blinking {
+    0% {
+        opacity: 0;
+        transform: rotateZ(0deg);
+        filter: brightness(0) drop-shadow(0 0 10px #ccff24) drop-shadow(0 0 30px #ccff24)
+        drop-shadow(0 0 20px #ccff24);
+    }
+    50% {
+        opacity: 100%;
+        transform: rotateZ(90deg);
+        filter: brightness(3) drop-shadow(0 0 5px #fff824) drop-shadow(0 0 20px #fff824)
+        drop-shadow(0 0 50px #fff824);
+    }
+    100% {
+        opacity: 90;
+        transform: rotateZ(0deg);
+        filter: drop-shadow(0 0 10px #ccff24) drop-shadow(0 0 20px #ccff24)
+        drop-shadow(0 0 50px #ccff24);
+    }
+}
+
+@keyframes Boosting {
+    0% {
+        filter: drop-shadow(0 0 2px #ccff24) drop-shadow(0 0 1px #ccff24)
+        drop-shadow(0 0 1px #ccff24);
+    }
+    50% {
+        filter: brightness(1.5) drop-shadow(0 0 1px #04e21a) drop-shadow(0 0 1px #04e21a)
+        drop-shadow(0 0 1px #04e21a);
+    }
+    100% {
+        filter: drop-shadow(0 0 3px #ccff24) drop-shadow(0 0 1px #ccff24)
+        drop-shadow(0 0 1px #ccff24);
+    }
+}
+
+@keyframes PowerShip {
+    0% {
+        filter: drop-shadow(0px 10px 4px #ffbc02);
+    }
+    50% {
+        filter: brightness(1.5) drop-shadow(0px 10px 4px #ff4602);
+    }
+    100% {
+        filter: drop-shadow(0px 10px 4px #ffbc02);
+    }
+}
